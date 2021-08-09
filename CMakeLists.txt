@@ -1,6 +1,6 @@
 # This file specifies how the project should be built, using CMake.
 # If you are unfamiliar with CMake, don't worry about all the details.
-# The sections you might want to edit are marked as such, and 
+# The sections you might want to edit are marked as such, and
 # the comments should hopefully make most of it clear.
 #
 # For many purposes, you may not need to change anything about this file.
@@ -8,7 +8,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Set project name, version and laguages here. (change as needed)
-# Version numbers are available by including "exampleConfig.h" in 
+# Version numbers are available by including "exampleConfig.h" in
 # the source. See exampleConfig.h.in for some more details.
 project(CPP_BOILERPLATE VERSION 1.2.3.4 LANGUAGES CXX)
 
@@ -54,9 +54,6 @@ add_library(${LIBRARY_NAME} OBJECT ${SOURCES})
 # Lib needs its header files, and users of the library must also see these (PUBLIC). (No change needed)
 target_include_directories(${LIBRARY_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
-# There's also (probably) doctests within the library, so we need to see this as well.
-target_link_libraries(${LIBRARY_NAME} PUBLIC doctest)
-
 # Set the compile options you want (change as needed).
 target_set_warnings(${LIBRARY_NAME} ENABLE ALL AS_ERROR ALL DISABLE Annoying)
 # target_compile_options(${LIBRARY_NAME} ... )  # For setting manually.
@@ -70,10 +67,10 @@ target_enable_lto(main optimized)  # enable link-time-optimization if available 
 
 # Set the properties you require, e.g. what C++ standard to use. Here applied to library and main (change as needed).
 set_target_properties(
-    ${LIBRARY_NAME} main 
-      PROPERTIES 
-        CXX_STANDARD 17 
-        CXX_STANDARD_REQUIRED YES 
+    ${LIBRARY_NAME} main
+      PROPERTIES
+        CXX_STANDARD 17
+        CXX_STANDARD_REQUIRED YES
         CXX_EXTENSIONS NO
 )
 
