@@ -92,7 +92,6 @@ Click the `Use this template` button to make a new repository from this template
 **NB**: GitHub templates do not carry over submodules, which means you need to add those back _before_ you can build the project. Run the following after you have generated your new project:
 ``` bash
 > git clone https://github.com/<your-username>/<your-repo-name>
-> git submodule add https://github.com/onqtam/doctest.git external/doctest
 > git commit -a --amend --no-edit
 > git push --force
 ```
