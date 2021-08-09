@@ -19,6 +19,8 @@ option(ENABLE_WARNINGS_SETTINGS "Allow target_set_warnings to add flags and defi
 option(ENABLE_LTO "Enable link time optimization" ON)
 option(ENABLE_DOCTESTS "Include tests in the library. Setting this to OFF will remove all doctest related code.
                         Tests in tests/*.cpp will still be enabled." ON)
+option(ENABLE_GOOGLETESTS "Include tests in the library. Setting this to OFF will remove all googletest related code.
+Tests in tests/*.cpp will still be enabled." OFF)
 
 # Include stuff. No change needed.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
@@ -26,6 +28,7 @@ include(ConfigSafeGuards)
 include(Colors)
 include(CTest)
 include(Doctest)
+include(Googletest)
 include(Documentation)
 include(LTO)
 include(Misc)
@@ -41,7 +44,7 @@ set(SOURCES          # All .cpp files in src/
     src/example.cpp
 )
 set(TESTFILES        # All .cpp files in tests/
-    tests/main.cpp
+    tests/doctests.cpp
 )
 set(LIBRARY_NAME engine)  # Default name for the library built from src/*.cpp (change if you wish)
 
