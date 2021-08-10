@@ -36,8 +36,10 @@ This is a boiler plate for C++ projects. What you get:
 ├── src
 │   └── example.cpp
 └── tests
-    ├── dummy.cpp
-    └── main.cpp
+    ├── main_doctest.cpp
+    ├── doctests.cpp
+    ├── main_googletest.cpp
+    └── googletests.cpp
 ```
 
 Sources go in [src/](src/), header files in [include/](include/), main programs in [app/](app), and
