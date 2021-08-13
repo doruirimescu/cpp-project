@@ -14,11 +14,11 @@ platform:
 configuration:
   - Debug
   - Release
-  
+
 # environment:
 #   matrix:
 #     - TOOLSET: v140
-  
+
 matrix:
   fast_finish: false
 
@@ -27,9 +27,6 @@ init:
   - cmd: cmake --version
   - cmd: msbuild /version
 
-install:
-  - git submodule update --init --recursive
-
 before_build:
   - cmake . -Bbuild -A%PLATFORM% -DCMAKE_BUILD_TYPE=%configuration%
 
@@ -37,10 +34,9 @@ build:
   project: build/CPP_BOILERPLATE.sln
   parallel: true
   verbosity: minimal
-  
+
 test_script:
   - cd build
   - set CTEST_OUTPUT_ON_FAILURE=1
-  - ctest -C %configuration% 
+  - ctest -C %configuration%
   - cd ..
-

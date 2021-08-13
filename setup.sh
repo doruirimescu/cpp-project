@@ -11,12 +11,8 @@ email=$(git config user.email)
 if [[ "$1" ]]; then
 	git commit --amend --author="$1"
 else
-	git commit --amend --author="$name <$email>" 
+	git commit --amend --author="$name <$email>"
 fi
-
-# Initialize submodules: This should already be done when cloning, but there are ways to muck it
-# up if you do things in the wrong order. So just to be sure, we do it now.
-git submodule update --init --recursive
 
 # Remove the remote (you probably want your own instead).
 git remote remove origin
