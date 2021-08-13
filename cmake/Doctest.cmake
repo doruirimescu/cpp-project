@@ -1,4 +1,5 @@
 if(ENABLE_DOCTESTS)
+    add_definitions(-DENABLE_DOCTEST_IN_LIBRARY)
     include(FetchContent)
     FetchContent_Declare(
             DocTest

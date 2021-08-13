@@ -54,6 +54,9 @@ add_library(${LIBRARY_NAME} OBJECT ${SOURCES})
 # Lib needs its header files, and users of the library must also see these (PUBLIC). (No change needed)
 target_include_directories(${LIBRARY_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
+# There's also (probably) doctests within the library, so we need to see this as well.
+target_link_libraries(${LIBRARY_NAME} PUBLIC doctest)
+
 # Set the compile options you want (change as needed).
 target_set_warnings(${LIBRARY_NAME} ENABLE ALL AS_ERROR ALL DISABLE Annoying)
 # target_compile_options(${LIBRARY_NAME} ... )  # For setting manually.
