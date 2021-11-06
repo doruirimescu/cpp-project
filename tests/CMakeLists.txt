@@ -12,7 +12,7 @@ set(TEST_RUNNER_PARAMS "")  # Any arguemnts to feed the test runner (change as n
 # --------------------------------------------------------------------------------
 #                         Make Tests (no change needed).
 # --------------------------------------------------------------------------------
-add_executable(${TEST_MAIN} ${TESTFILES})
+add_executable(${TEST_MAIN} ${TESTFILES} ${SOURCES})
 target_link_libraries(${TEST_MAIN} gtest_main)
 
 set_target_properties(${TEST_MAIN} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
